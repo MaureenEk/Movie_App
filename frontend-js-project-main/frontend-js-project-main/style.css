@@ -1,0 +1,226 @@
+:root {
+  --bg-color: #10141f;
+  --bg-side-bar: #161d2f;
+  --text-color: #aeb2b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Montserrat", sans-serif;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  padding: 1.5rem 0 1.5rem 1.5rem;
+}
+
+.hr-scroll {
+  overflow: auto;
+  padding-bottom: 1rem;
+}
+
+/* ========== SIDEBAR ==========  */
+.sidebar {
+  width: 90px;
+  background-color: var(--bg-side-bar);
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+  /* position: fixed;
+  height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav .logo {
+  margin-bottom: 3rem;
+}
+
+.nav .menu {
+  list-style: none;
+}
+
+.nav .menu .menu-item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.sidebar .avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #58668e;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ========== SIDEBAR ==========  */
+
+/* ========== MAIN VIEW ==========  */
+.main-view {
+  flex-grow: 1;
+  margin-left: 2rem;
+  /* margin-left: calc(2rem + 90px); */
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.search-form input {
+  color: #575b66;
+  height: 40px;
+  background-color: var(--bg-color);
+  font-size: 16px;
+  padding: 0 1.2rem;
+  flex-grow: 1;
+  border: 0;
+  outline: 0;
+}
+
+.search-form input:focus,
+.search-form input:active {
+  border: 0;
+}
+
+.trending-movies {
+  margin-bottom: 2rem;
+}
+
+.trending-movies h2,
+.recommended-movies h2 {
+  color: var(--text-color);
+  font-size: 23px;
+}
+
+.trending-movies-wrapper {
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+.trending-movies-item {
+  padding: 1.2rem;
+  position: relative;
+  background: url("https://image.tmdb.org/t/p/w185/sqLowacltbZLoCa4KYye64RvvdQ.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 220px;
+  border-radius: 6px;
+  width: 40%;
+  flex-shrink: 0;
+}
+
+.trending-movies-item:not(:first-child) {
+  margin-left: 3rem;
+}
+
+.trending-movies-item .bookmark-wrapper {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  z-index: 2;
+}
+
+.bookmark-wrapper .bookmark-btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  padding: 5px;
+  border: 0;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  cursor: pointer;
+}
+.trending-movies-item .overlay {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.trending-movies-item .movie-details {
+  color: #fff;
+  z-index: 2;
+  position: absolute;
+  bottom: 1.5rem;
+  font-size: 12px;
+}
+
+.movie-details .ycr .dot::after {
+  content: "\A";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #d6dbdd;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.trending-movies-item .movie-details .title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+.recommended-movies-wrapper {
+  margin-top: 1.5rem;
+  padding-right: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.recommended-movies-item {
+  padding: 1rem;
+  position: relative;
+  background: url("https://image.tmdb.org/t/p/w185/sqLowacltbZLoCa4KYye64RvvdQ.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 180px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.recommended-movies-item .bookmark-wrapper {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 2;
+}
+
+.recommended-movies-wrapper .movie-details {
+  color: #d6dbdd;
+  font-size: 12px;
+}
+
+.recommended-movies-wrapper .movie-details .title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+/* ========== MAIN VIEW ==========  */
+
+/* BOOKMARKED MOVIES*/
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%;
+  }
+  }
